@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static "commons/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "commons/css/custom.css" %}">
+  <script src="{% static "commons/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "commons/js/popper.min.js" %}"></script>
+  <script src="{% static "commons/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "commons/js/jquery-3.2.1.slim.min.js" %}"></script>
+
+  <!-- ICONS SCRIPT
+  <script src="https://use.fontawesome.com/3687b2dab0.js"></script>
+  -->
+
+  <style>
+  .paralsec {
+  background-image: url("{% static "commons/images/bluesea.jpg" %}");
+  }
+  </style>
+
+</head>
+
+    <body>
+
+      <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary">
+         <div class="container heading">
+          <a class="navbar-brand" href="#">John Doe <span style="color:#7DCADA">Exports</span> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="collapsingNavbarSm">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+
+    {% block content %} {% endblock content %}
+
+    <footer class="footer">
+      <div class="container" style="padding:50px">
+        <div class="row">
+          <div class="col-sm-8" style="text-align:left;">&#169; 2023 by John Doe Exports. Proudly created by Kevin M Varghese</div>
+          <div class="col-sm-4">
+            <a href="#"><img src="https://static.wixstatic.com/media/7355b116f509973815da125ab3ce4065.wix_mp/v1/fill/w_22,h_22,al_c,usm_0.66_1.00_0.01/7355b116f509973815da125ab3ce4065.wix_mp" /></a>
+            <a href="#"><img src="https://static.wixstatic.com/media/89b1d2497b29ccbb7d37be1ec6ef0052.png/v1/fill/w_22,h_22,al_c,usm_0.66_1.00_0.01/89b1d2497b29ccbb7d37be1ec6ef0052.png" /></a>
+            <a href="#"><img src="https://static.wixstatic.com/media/eb9767422f0e4c41a507d3e67c4ebac8.png/v1/fill/w_22,h_22,al_c,usm_0.66_1.00_0.01/eb9767422f0e4c41a507d3e67c4ebac8.png" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    </body>
+
+</html>
