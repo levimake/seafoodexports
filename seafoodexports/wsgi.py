@@ -1,5 +1,5 @@
 """
-WSGI config for mysite project.
+WSGI config for seafoodexports project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
