@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 
 class User(models.Model):
-    username = models.CharField(max_length=30)
+    id = models.AutoField(primary_key = True)
+    username = models.CharField(max_length=30, unique=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     country = models.CharField(max_length=30)
