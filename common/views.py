@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import User
 from .forms import RegistrationForm, LoginForm
-from django.contrib.auth import authenticate, login
 
 
 def home(request):
     if request.method=="GET":
         return render(request, 'index.html')
+
 
 def register(request):
     if request.method == "POST":
@@ -57,8 +57,9 @@ def login(request):
             if user.login(username, password):
                request.session['logged_in'] = True
                request.session['username'] = user.username
+               request.session['user_id'] = user.id
                request.session.save()
-               return HttpResponse("Login Success")
+               return HttpResponseRedirect("/orders")
 
             else:
                 return redirect('login')
