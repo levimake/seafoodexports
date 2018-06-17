@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for order in orders %}
+        <div>
+            {{ order.id }} {{ order.type }} {{ order.quantity }} {{ order.status }}
+        </div>
+    {% endfor %}
+{% endblock content %}
