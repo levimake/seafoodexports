@@ -56,7 +56,7 @@ def login(request):
 
             if user.login(username, password):
                request.session['logged_in'] = True
-               request.session['username'] = username
+               request.session['username'] = objects.username
                request.session.save()
                return HttpResponse("Login Success")
 
