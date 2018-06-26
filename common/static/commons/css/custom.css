@@ -1,3 +1,7 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .bg-primary {
   background-color: #0c3c60 !important;
 }
@@ -24,7 +28,7 @@
 
 
 .paral {
-min-height: 100vh;
+min-height: 85vh;
 background-attachment: fixed;
 background-size: cover;
 background-position: 50% 50%;
@@ -136,12 +140,16 @@ body {
 }
 
 hr {
-    height: 8px;
+    height: 3px;
     background-color:#6ea4ca;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 20px;
-    width: 15%;
+    width: 20%;
     border-radius: 1px;
+}
+
+table {
+  text-transform: capitalize;
 }
 
 /* RESPONSIVE STYLES */
@@ -178,4 +186,22 @@ hr {
   .paral p {
     font-size:24px;]
   }
+}
+
+.partners{
+  width:100%;
+}
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%;
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
 }

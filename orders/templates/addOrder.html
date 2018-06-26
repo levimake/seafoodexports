@@ -3,14 +3,13 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div style="margin-bottom:150px;"></div>
 <div class="container">
     <h1 class='display-4 page-title'>Place Your Oder</h1>
     <hr />
     <form action="add", method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-default">Place Order</button>
+        <button type="submit" class="btn btn-block" style="background-color:#0c3c60; color:#ffffff;">Place Order</button>
     </form>
 </div>
 <div style="margin-bottom:150px;"></div>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  {% for current_user in user %}
+
+  {{ current_user.username }}
+  {{ current_user.first_name }}
+  {{ current_user.last_nmae }}
+
+  {% endfor %}
+</div>
+
+{% endblock content %}

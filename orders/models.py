@@ -7,7 +7,7 @@ class Order(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     quantity = models.FloatField(blank=False, null=False)
-    
+
     TYPE_CHOICES = (
             ('fish', 'Fish'),
             ('meat', 'Meat')
@@ -19,13 +19,13 @@ class Order(models.Model):
             ('completed', 'COMPLETED')
         )
 
+
     type = models.CharField(max_length=40, choices=TYPE_CHOICES)
     delivery_address = models.TextField()
     company_name = models.CharField(max_length=50)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     timestamp = models.DateTimeField(default=timezone.now)
 
-    
     @classmethod
     def processed(cls, id):
         order = cls.objects.get(id=id)
@@ -39,7 +39,7 @@ class Order(models.Model):
         order.status = 'completed'
         order.save()
 
-    
+
     @classmethod
     def cancel(cls, id):
         order = cls.objects.get(id=id)
@@ -49,4 +49,3 @@ class Order(models.Model):
             return False
         else:
             order.delete()
-                

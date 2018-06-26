@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import OrderForm
 from .models import Order
+from .models import User
 
 from common.decorators import IsLoggedIn
 
@@ -11,7 +12,9 @@ def home(request):
     if request.method == "GET":
         my_orders = Order.objects.filter(user = request.session['user_id'])
         print(my_orders)
-        return render(request, 'myOrders.html', {'orders': my_orders})
+        return render(request, 'myOrders.html', {'orders': my_orders}, {'request':request})
+
+
 
 
 @IsLoggedIn
@@ -20,7 +23,7 @@ def place_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse("Order Placed")
+            return HttpResponseRedirect("/orders")
         else:
             return HttpResponse("Failed to place order")
 

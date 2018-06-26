@@ -1,9 +1,38 @@
 {% extends "base.html" %}
 
+
 {% block content %}
-    {% for order in orders %}
-        <div>
-            {{ order.id }} {{ order.type }} {{ order.quantity }} {{ order.status }}
-        </div>
-    {% endfor %}
+  <div class="container">
+  <h3 class='display-4 page-title'>Order History</h1>
+    <hr/>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Sl No.</th>
+          <th scope="col">Item</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for order in orders %}
+          <tr>
+            <td> {{ order.id }} </td>
+            <td> {{ order.type }} </td>
+            <td> {{ order.quantity }} </td>
+            <td>{% if order.status == 'pending' %}<span class="badge badge-primary">Pending</span>
+              {% elif order.status == 'processed' %}<span class="badge badge-warning">Processed</span>
+              {% else %}<span class="badge badge-success">Success</span>{% endif %}
+            </td>
+          </tr>
+            {% endfor %}
+      </tbody>
+  </table>
+
+  <center><p>Want more products, <button type="submit" class="btn btn-sm"
+    style="background-color:#5593b3; color:#ffffff;"
+    onclick="location.href = '/orders/add';">Order Now</button></p></center>
+
+</div>
+<br />
 {% endblock content %}

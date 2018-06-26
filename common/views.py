@@ -7,7 +7,7 @@ from .forms import RegistrationForm, LoginForm
 
 def home(request):
     if request.method=="GET":
-        return render(request, 'index.html')
+        return render(request, 'index.html', {'request':request})
 
 
 def register(request):
@@ -58,6 +58,7 @@ def login(request):
                request.session['logged_in'] = True
                request.session['username'] = user.username
                request.session['user_id'] = user.id
+               request.session['first_name'] = user.first_name
                request.session.save()
                return HttpResponseRedirect("/orders")
 
@@ -71,3 +72,8 @@ def login(request):
     if request.method == "GET":
         form = LoginForm()
         return render(request, 'login.html', {'form':form})
+
+def logout(request) :
+    if request.method == "GET" :
+        request.session.flush()
+        return redirect('/')

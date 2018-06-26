@@ -3,14 +3,16 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-  <div style="margin-bottom:150px;"></div>
   <div class="container">
+    <h3 class='display-4 page-title'>Create Your Account</h1>
+      <hr style="height:2px;"/>
+      <center><p>Already have an account, <a href="/login">Sign in</a></p></center>
     <form action="register", method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-default">Register</button>
+        <button type="submit" class="btn btn-block" style="background-color:#0c3c60;">Register</button>
     </form>
   </div>
   <div style="margin-bottom:150px;"></div>
-  
+
 {% endblock content %}
