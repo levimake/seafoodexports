@@ -26,6 +26,11 @@ class Order(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     timestamp = models.DateTimeField(default=timezone.now)
 
+    
+    class Meta:
+        verbose_name_plural='Orders'
+        ordering = ['-timestamp']
+    
     @classmethod
     def processed(cls, id):
         order = cls.objects.get(id=id)
