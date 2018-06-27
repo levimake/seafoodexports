@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.admin.views.decorators import staff_member_required
 
 from .models import User
 from .forms import RegistrationForm, LoginForm
@@ -7,9 +8,10 @@ from .forms import RegistrationForm, LoginForm
 
 def home(request):
     if request.method=="GET":
+        request.session['logged_in'] = request.session.get('logged_in', False)
         return render(request, 'index.html', {'request':request})
 
-
+@staff_member_required
 def register(request):
     if request.method == "POST":
         try:
