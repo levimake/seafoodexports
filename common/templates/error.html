@@ -1,0 +1,89 @@
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Page Not Found :(</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static "commons/css/bootstrap.min.css" %}">
+
+    <script src="{% static "commons/js/jquery.min.js" %}"></script>
+    <script src="{% static "commons/js/popper.min.js" %}"></script>
+    <script src="{% static "commons/js/bootstrap.min.js" %}"></script>
+
+    <link rel="stylesheet" href="{% static "commons/css/custom.css" %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+
+/* SELECTED TEXT */
+::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
+
+::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+
+html {
+    font-size: 18px;font-size: 1.13rem;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    }
+
+
+body {
+    background: #c5ebf7;
+    margin: auto;
+    color: #000000;
+    }
+
+p {
+  text-align: center;
+}
+
+</style>
+
+    </head>
+
+    <body>
+
+      <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
+         <div class="container heading">
+          <a class="navbar-brand" href="/">Delmar <span style="color:#7DCADA">Enterprises</span> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="collapsingNavbarSm">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="Absolute-Center is-Responsive">
+
+      <h3 class='display-4 page-title' style="padding:0px; text-transform:capitalize; color:#000;">Error</h3>
+
+        <div class="warning">
+            {% if error == None %}<p>This is an error page. You may kindly go to some useful pages</p>{% else %}
+            <p>{{ error }}</p>
+            {% endif %}
+            <center><button type="submit" class="btn btn-sm"
+              style="background-color:#0c3c60; color:#ffffff; width:100%; padding:5px;"
+              onclick="location.href = '/';">Home</a></center>
+        </div>
+
+
+    </div><!-- /.container -->
+    </body>
+</html>

@@ -67,7 +67,10 @@ def login(request):
 
         except Exception as e:
             print(e)
-            return HttpResponse("Exception")
+            form = LoginForm()
+            error="The username or password you've entered is invalid"
+            return render(request, 'login.html', {'form':form,'error':error})
+
 
     if request.method == "GET":
         form = LoginForm()
@@ -77,3 +80,7 @@ def logout(request) :
     if request.method == "GET" :
         request.session.flush()
         return redirect('/')
+
+def error(request) :
+    if request.method == "GET" :
+        return render(request, "error.html")

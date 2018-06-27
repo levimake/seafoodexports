@@ -12,7 +12,7 @@ def home(request):
     if request.method == "GET":
         my_orders = Order.objects.filter(user = request.session['user_id'])
         print(my_orders)
-        return render(request, 'myOrders.html', {'orders': my_orders}, {'request':request})
+        return render(request, 'myOrders.html', {'orders': my_orders})
 
 
 
@@ -25,7 +25,8 @@ def place_order(request):
             form.save()
             return HttpResponseRedirect("/orders")
         else:
-            return HttpResponse("Failed to place order")
+            error="Sorry we couldn't place the order. An unexpected error has occured. Please try again later."
+            return render(request, 'error.html', {'error':error})
 
     elif request.method == "GET":
         form = OrderForm()

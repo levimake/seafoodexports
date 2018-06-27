@@ -26,7 +26,9 @@
 
 </head>
 
-    <body>
+    <body style="margin-bottom:0px;">
+
+    <div class="content">
 
       <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
          <div class="container heading">
@@ -73,17 +75,16 @@
 
     {% block content %} {% endblock content %}
 
-    <footer class="footer sticky-bottom">
-      <div class="container" style="padding:50px">
-        <div class="row">
-          <div class="col-sm-8" style="text-align:left;">&#169; 2023 by John Doe Exports. Proudly created by Kevin M Varghese</div>
-          <div class="col-sm-4">
-            <a href="#"><img src="{% static "commons/images/fblogo.png" %}" /></a>
-            <a href="#"><img src="{% static "commons/images/twitterlogo.png" %}" /></a>
-            <a href="#"><img src="{% static "commons/images/googlepluslogo.png" %}" /></a>
+    </div>
+
+    <footer class="footer sticky-bottom" style="margin-bottom:0px;">
+          <div class="pull-left">&#169; 2023 by John Doe Exports. Proudly created by Kevin M Varghese</div>
+          <div class="pull-right">
+            <a href="#"><i style="font-size:20px; margin-right:5px;" class="fa">&#xf09a;</i></a>
+            <a href="#"><i style="font-size:20px; margin-right:5px;" class="fa">&#xf099;</i></a>
+            <a href="#"><i style="font-size:20px" class="fa">&#xf0d5;</i></a>
           </div>
         </div>
-      </div>
     </footer>
 
 
