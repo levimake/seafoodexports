@@ -56,7 +56,8 @@
                       <a class="nav-link" href="/orders">My Orders</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href={% if request.session.username == '' or request.session.username == None %}"/login"{% else %}"/logout"{% endif %}>{% if request.session.username == '' or request.session.username == None %}Login/Signup{% else %}Logout{% endif %}</a>
+                      <a class="nav-link" href={% if not request.session.logged_in %}"/login"{% else %}"/logout"{% endif %}>
+                          {% if not request.session.logged_in %}Login{% else %}Logout{% endif %}</a>
                   </li>
 
 
