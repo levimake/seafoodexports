@@ -5,8 +5,8 @@ from common.models import User
 
 class Order(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
-    quantity = models.FloatField(blank=False, null=False)
+    user = models.ForeignKey(User, on_delete = models.PROTECT)
+    quantity = models.PositiveSmallIntegerField(blank=False, null=False)
 
     TYPE_CHOICES = (
             ('fish', 'Fish'),
