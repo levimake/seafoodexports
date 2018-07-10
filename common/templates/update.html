@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+  <div class="container formContainer">
+    <h3 class='display-4 page-title'>Update Profile</h1>
+    <hr/>
+    <p style="font-weight:bold;"><span class='display-5 page-title' style="color:black;">Name : </span>
+    {{ cur_user.first_name }}<br /></p><p>
+    <span class='display-5 page-title' style="color:black;">Address : </span>
+    {{ cur_user.address }}<br /></p><p>
+    <span class='display-5 page-title' style="color:black;">Phone No :
+    {{ cur_user.phone_number }} </p>
+  </div>
+  <div style="margin-bottom:150px;"></div>
+
+{% endblock content %}
