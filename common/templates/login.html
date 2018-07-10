@@ -50,7 +50,7 @@
   </nav>
 
      <div class="Absolute-Center is-Responsive">
-       <h3 class='display-4 page-title' style="padding:0px;">Login</h1>
+       <h3 class='display-4 page-title' style="padding:0px; margin-bottom: 1em;">Login</h1>
     <form action="login", method="POST">
       {% csrf_token %}
       <!--  <table>{{form}}</table> -->
@@ -61,7 +61,7 @@
     {% if error == None %} <!--Print Nothing-->{% else %}
     <div class="alert alert-danger" role="alert">{{ error }}</div>
     {% endif %}
-    <center><a href="/"><i class="fa fa-angle-left"></i> Home</a></center>
+    <center><a href="/" style="padding-bottom: 30px;"><i class="fa fa-angle-left"></i> Home</a></center>
   </div>
 </body>
 </html>
