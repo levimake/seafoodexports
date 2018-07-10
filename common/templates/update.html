@@ -45,7 +45,11 @@
          </button>
        </div>
        <div class="modal-body">
-         Password
+         <form action="update", method="POST">
+            {% csrf_token %}
+            {{ form2|crispy }}
+            <button type="submit" class="btn btn-block" style="background-color:#0c3c60; color: #fff;">Submit</button>
+         </form>
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -64,7 +68,12 @@
          </button>
        </div>
        <div class="modal-body">
-         Address
+          <form action="update", method="POST">
+            {% csrf_token %}
+            {{ form1|crispy }}
+            <button type="submit" class="btn btn-block" style="background-color:#0c3c60; color: #fff;">Submit</button>
+         </form>
+
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -83,7 +92,11 @@
          </button>
        </div>
        <div class="modal-body">
-         phone_number
+          <form action="update", method="POST">
+            {% csrf_token %}
+            {{ form3|crispy }}
+            <button type="submit" class="btn btn-block" style="background-color:#0c3c60; color: #fff;">Submit</button>
+         </form>
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
