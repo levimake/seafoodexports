@@ -5,6 +5,8 @@
   <div class="container">
   <h3 class='display-4 page-title'>Order History</h1>
     <hr/>
+
+  {% if orders|length > 0 %}
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -33,6 +35,13 @@
     style="background-color:#5593b3; color:#ffffff;"
     onclick="location.href = '/orders/add';">Order Now</button></p></center>
 
+  {% else %}
+
+  <center><p class='display-4 page-title' style="color:#000000; font-size:25px;">You haven't ordered any products yet<br/> <button type="submit" class="btn btn-sm"
+    style="background-color:#5593b3; color:#ffffff; font-size:20px; padding:20px; margin:10px;"
+    onclick="location.href = '/orders/add';">Order Now</button></p></center>
+
+  {% endif %}
 </div>
 <br />
 {% endblock content %}

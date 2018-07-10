@@ -4,6 +4,12 @@
 
 {% load static %}
 
+<style>
+.paralsec1 {
+background-image: url("{% static "commons/images/paralsec2.jpg" %}");
+}
+</style>
+
 <!-- First Parallax Section -->
 <div class="paral paralsec" style="position: relative; padding-bottom: 30px;">
 <div class="head-desc" style="position: absolute; bottom: 0; left: 0;">
@@ -74,52 +80,29 @@
 
 </div>
 
+<div class="jumbotron paralmini paralsec1">
+<h1 class="display-3" style="font-weight:bold;">Fresh Sea Food Products</span></h1>
+<p class="lead">From Sea To Heart</p>
+<p class="lead"></p>
+</div>
 
 <div style="margin-top:50px;"> </div>
 
 <div class="container">
-
-<div class="row" style="text-align:center;">
-
-  <div class="col-md-6">
-    <div class="col-md-12">
-      <h2 class="display-5 home_titles" style="color:#0c3c60;">About</h1>
-      <p class="home_desc" style="color:#0c3c60;">I'm a paragraph. Click here to add your own text and edit me. It’s easy.
-        Just click “Edit Text” or double click me to add your own content and make changes to the font.
-        Feel free to drag and drop me anywhere you like on your page. </p>
-        <button type="button" class="btn button home_button">More Info</button>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="col-md-12">
-      <h2 class="display-5 home_titles" style="color:#0c3c60;">Contact</h1>
-      <p class="home_desc" style="color:#0c3c60;">
-        500 Terry Francois Street,<br />
-        San Francisco, CA 94158<br />
-        info@mysite.com<br />
-        Tel: 123-456-7890<br />
+<center>
+      <h2 class="display-4 home_titles" style="color:#0c3c60;">Contact</h1>
+      <p class="home_desc" style="color:#0c3c60; font-size:18px;">
+        Delmar Enterprises<br />
+        251878, Manathupadam Road<br />
+        Changampuzha Nagar P.O. Kochi 682033<br />
+        Telefax (Office):91 484 24587011<br />
    </p>
    <button type="button" class="btn button home_button">More Info</button>
-   </div>
- </div>
-
+</center>
 </div>
 
 </div>
-
-<div style="padding:50px; margin-top:10px; background-color:#d9ebf9">
-
-<div class="container">
-  <h2 class="display-5 home_titles" style="color:#0c3c60; text-align:center;">Our Partners</h1>
-   <div class="row">
-      <div class="col-md-3"><img src="{% static "commons/images/partner1.png" %}" class="partners"></div>
-      <div class="col-md-3"><img src="{% static "commons/images/partner2.png" %}" class="partners"></div>
-      <div class="col-md-3"><img src="{% static "commons/images/partner3.png" %}" class="partners"></div>
-      <div class="col-md-3"><img src="{% static "commons/images/partner4.png" %}" class="partners"></div>
-   </div>
-</div>
-
+<div style="margin-top:50px;"> </div>
 </div>
 
 {% endblock content %}

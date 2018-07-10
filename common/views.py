@@ -49,14 +49,14 @@ def login(request):
             user = User.objects.get(username=username)
 
             if user.login(username, password):
-               
+
                request.session['logged_in'] = True
                request.session['user_id'] = user.id
                request.session.save()
-               
+
                if user.completed:
                    return HttpResponseRedirect("/profile")
-               
+
                else:
                    return HttpResponseRedirect("/submit")
 
@@ -114,7 +114,7 @@ def profile(request):
 @IsLoggedIn
 def profile_view(request):
     if request.method == "GET":
-        
+
         id = request.session['user_id']
         user = User.objects.get(id=id)
 
@@ -122,7 +122,7 @@ def profile_view(request):
             id = request.session['user_id']
             user = User.objects.get(id = id)
             return render(request, 'update.html', {'cur_user': user})
-        
+
         else:
             return HttpResponseRedirect('/submit')
 
@@ -130,12 +130,12 @@ def profile_view(request):
 @IsLoggedIn
 def update(request):
     if request.method == "POST":
-    
+
         try:
             password = request.POST.get('password', False)
             address = request.POST.get('address', False)
             phone_number = request.POST.get('phone_number', False)
-        
+
             id = request.session['user_id']
             user = User.objects.get(id=id)
 
@@ -172,7 +172,7 @@ def update_password(request):
 @IsLoggedIn
 def update_address(request):
     if request.method == "GET":
-        form = AddressForm() 
+        form = AddressForm()
         return render(request, 'update.html', {'form': form})
 
 
@@ -186,3 +186,7 @@ def update_phone_number(request):
 def error(request) :
     if request.method == "GET" :
         return render(request, "error.html")
+
+def about(request) :
+    if request.method == "GET" :
+        return render(request, "about.html")

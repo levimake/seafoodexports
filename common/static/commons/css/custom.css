@@ -46,11 +46,11 @@ background-position: 50% 50%;
 text-align: center;
 }
 
+
 .paral p {
 font-size: 20px;
-color:#f5f5f5;
 text-align: center;
-line-height: 50px;
+line-height: 100px;
 color:#0c3c60;
 }
 
@@ -69,8 +69,39 @@ color:#0c3c60;
   padding: 10px;
 }
 
+.jumbotron{margin-bottom: 0;}
+
 
 /* PARALLAX EFFECT ENDS*/
+
+/* PARALLAX MINI */
+/* Header Parallax Element Style*/
+.paralmini {
+min-height: 400px;
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+background-color:#e3e3e3;
+}
+/* Paragraph for Parallax Section */
+.paralmini p {
+font-size: 24px;
+color:#f5f5f5;
+text-align: center;
+line-height: 60px;
+}
+
+/* Heading for Parallax Section */
+.paralmini h1 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 60px;
+line-height: 100px;
+}
+
+
+
 .columns {
   background: #0c3c60;
   color:#D1E0EB;
@@ -235,4 +266,7 @@ footer a:hover {
   padding: 40px;
 }
 
-
+.badge {
+font-size:15px;
+padding:10px;
+}

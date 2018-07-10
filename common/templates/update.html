@@ -6,13 +6,90 @@
   <div class="container formContainer">
     <h3 class='display-4 page-title'>Update Profile</h1>
     <hr/>
-    <p style="font-weight:bold;"><span class='display-5 page-title' style="color:black;">Name : </span>
-    {{ cur_user.first_name }}<br /></p><p>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm">
+    <p style="font-size:20px;"><span class='display-5 page-title' style="color:black;">Name : </span>
+    <span style="font-weight:bold;">{{ cur_user.first_name }}</span>
+    <br /></p><p style="font-size:20px;">
     <span class='display-5 page-title' style="color:black;">Address : </span>
-    {{ cur_user.address }}<br /></p><p>
+    <span style="font-weight:bold;">{{ cur_user.address }}</span>
+    <br /></p><p style="font-size:20px;">
     <span class='display-5 page-title' style="color:black;">Phone No :
-    {{ cur_user.phone_number }} </p>
+    <span style="font-weight:bold;">{{ cur_user.phone_number }}</span> </p>
   </div>
+
+  <div class="col-sm">
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#changePassword" style="margin-bottom:8px;"><i class="fa fa-lock" aria-hidden="true"></i> Change Password</button> <br />
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#changeAddress" style="margin-bottom:8px;"><i class="fa fa-address-card" aria-hidden="true"></i> Change Address</button> <br />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePhone"><i class="fa fa-phone" aria-hidden="true"></i> Change Phone No.</button> <br />
+  </div>
+
+</div>
+</div>
+
+
+</div>
   <div style="margin-bottom:150px;"></div>
+
+
+
+  <!-- Modal -->
+ <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Change Your Password</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         Password
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="modal fade" id="changeAddress" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Change Your Address</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         Address
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="modal fade" id="changePhone" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Change Your Phone Number</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+         phone_number
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+   </div>
+ </div>
 
 {% endblock content %}

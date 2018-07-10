@@ -32,7 +32,7 @@
 
       <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-primary">
          <div class="container heading">
-          <a class="navbar-brand" href="/">Delmar <span style="color:#7DCADA">Enterprises</span> </a>
+          <a class="navbar-brand" href="/"><img src="{% static "commons/images/logo.png" %}" width="30" height="30"  alt="Delmar Enterprises Logo" /> Delmar <span style="color:#7DCADA">Enterprises</span> </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm">
               <span class="navbar-toggler-icon"></span>
           </button>
@@ -50,18 +50,32 @@
               </ul> -->
               <ul class="navbar-nav ml-auto">
                    <li class="nav-item">
-                      <a class="nav-link" href="/profile">Profile</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                      <a class="nav-link" href="/about">About</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/orders">My Orders</a>
+                    <a class="nav-link" href="#">Vision</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href={% if not request.session.logged_in %}"/login"{% else %}"/logout"{% endif %}>
-                          {% if not request.session.logged_in %}Login{% else %}Logout{% endif %}</a>
+                      <a class="nav-link" href="/orders">Production</a>
                   </li>
+                  {% if not request.session.logged_in %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profile">Profile</a>
+          <a class="dropdown-item" href="/orders">My Orders</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </li>
+                  {% endif %}
+
 
 
                   <!-- UNDER CONSTRUCTION
@@ -82,7 +96,7 @@
     </div>
 
     <footer class="footer sticky-bottom" style="margin-bottom:0px;">
-          <div class="pull-left">&#169; 2023 by John Doe Exports. Proudly created by Kevin M Varghese</div>
+          <div class="pull-left">&#169; 2018 All Rights Reserved By Delmar Enterprises</div>
           <div class="pull-right">
             <a href="#"><i style="font-size:20px; margin-right:5px;" class="fa">&#xf09a;</i></a>
             <a href="#"><i style="font-size:20px; margin-right:5px;" class="fa">&#xf099;</i></a>

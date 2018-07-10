@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+.paralmini h1 {
+  font-size: 30px;
+  padding-top: 0px;
+  line-height: 40px;
+}
+@media only screen and (min-width: 767.98px) {
+.container {
+  max-width: 60%;
+}
+.paralmini h1 {
+  font-size: 30px;
+  padding-top: 0px;
+  line-height: 00px;}
+}
+.paralsec1 {
+background-image: url("{% static "commons/images/paralsec2.jpg" %}");
+}
+.paralsec2 {
+background-image: url("{% static "commons/images/about-paral.jpg" %}");
+}
+.paralmini {
+  min-height: 80px;
+}
+</style>
+
+
+<div class="container" style="font-size:18px;">
+  <h3 class='display-4 page-title'>About</h3>
+    <hr style="height:2px; width:10%;"/>
+
+<img src="{% static "commons/images/logowithBG.jpg" %}" class="rounded-circle mx-auto d-block" style="height:100px; padding:10px;">
+
+
+<p style="text-align:center; font-color:blue; padding:15px; font-style:italic; font-size:20px; color:#67a9d2;">
+  Quality is not what happens when what you do matches your intentions.
+  It is what happens when what you do matches your customers' expectations."
+</p>
+
+<div class="jumbotron paralmini paralsec1">
+<h1 class="display-3" style="font-weight:bold;">From The Sea To Your Hearts...</span></h1>
+</div>
+
+<h3 class='display-5 page-title' style="text-transform:none; font-weight:bold;"></h3>
+<p style="padding:10px;">
+  Sustainability is key to life. Here, at Delmar we offer world class
+  seafood processing facilities focusing on sustainability and ecology preservation.
+  Employing environmentally friendly practises, Delmar ensures freshly processed
+  fish products composing of fish fillets are distributed across its brances spanning
+  all over India. The fishing points are considered after careful research while
+  preserving the local ecosystem.
+  <br />
+  Trust and loyalty are the core fundamentals on which Delmar is built and we
+  strive to maintain good relations with our clientele through mutual understanding
+  and transparency in communication.
+</p>
+
+<div class="jumbotron paralmini paralsec2">
+<h1 class="display-3" style="font-weight:bold;">Only The Best For The Best</span></h1>
+</div>
+
+<p style="padding:10px;">
+  After undergoing stringent cleaning and handling measures and a series of quality
+  assurance checks, the food is processed right on arrival to preserve its taste,
+  richness and quality. <br />
+  All stages from procuring to processing to packing, our employees work to provide
+  the best of the food from sea to your plates. Banking on new developments and
+  advancements in the field of seafood business, Delmar is always one step ahead
+  of its competitors striving to bring fresh, nutritious and succulent seafood to the
+  platter everywhere.
+</p>
+
+<hr style="height:1px; width:30%;"/>
+
+</div>
+
+<div style="margin-bottom:35px;" />
+
+
+{% endblock content %}
