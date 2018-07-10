@@ -119,9 +119,21 @@ def profile_view(request):
         user = User.objects.get(id=id)
 
         if user.completed:
+            
             id = request.session['user_id']
             user = User.objects.get(id = id)
-            return render(request, 'update.html', {'cur_user': user})
+            form1 = AddressForm()
+            form2 = PasswordForm()
+            form3 = PhoneForm()
+
+            payload = {
+                       'cur_user': user,
+                       'form1': form1,
+                       'form2': form2,
+                       'form3': form3
+                      }
+
+            return render(request, 'update.html', payload)
 
         else:
             return HttpResponseRedirect('/submit')
@@ -144,12 +156,33 @@ def update(request):
 
                 if check_password(old_password, user.password):
                     User.update_password(user.id, password)
+                    msg = "Password updated successfully"
+                
+                    return redirect('/profile', {'msg': msg})
+                
+                else:
+                    msg = "Password verification failed"
+                    return redirect('/profile', {'msg': msg})
 
             elif address:
-                User.update_address(user.id, address)
+                try:
+                    User.update_address(user.id, address)
+                    msg = "Address updated successfully"
+                    return redirect('/profile', {'msg': msg})
+
+                except Exception as e:
+                    msg = "Address update failed"
+                    return redirect('/profile', {'msg': msg})
 
             elif phone_number:
-                User.update_phone(user.id, phone_number)
+                try:
+                    User.update_phone(user.id, phone_number)
+                    msg = "Phone number updated successfully"
+                    return redirect('/profile', {'msg': msg})
+                    
+                except Exception as e:
+                    msg = "Phone Number update failed"
+                    return redirect('/profile', {'msg': msg})
 
             else:
                 return HttpResponseRedirect('/profile')
@@ -162,30 +195,10 @@ def update(request):
         return HttpResponseRedirect('/profile')
 
 
-@IsLoggedIn
-def update_password(request):
-    if request.method == "GET":
-        form = PasswordForm()
-        return render(request, 'update.html', {'form': form})
-
-
-@IsLoggedIn
-def update_address(request):
-    if request.method == "GET":
-        form = AddressForm()
-        return render(request, 'update.html', {'form': form})
-
-
-@IsLoggedIn
-def update_phone_number(request):
-    if request.method == "GET":
-        form = PhoneForm()
-        return render(request, 'update.html', {'form': form})
-
-
 def error(request) :
     if request.method == "GET" :
         return render(request, "error.html")
+
 
 def about(request) :
     if request.method == "GET" :
