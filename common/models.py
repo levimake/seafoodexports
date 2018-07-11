@@ -54,19 +54,6 @@ class User(models.Model):
         user.save()
 
         return user
-    
-
-    @classmethod
-    def update(cls, id, password, address, phone_number):
-
-        user = cls.objects.get(id = id)
-        user.password = password
-        user.address = address
-        user.phone_number = phone_number
-
-        user.save()
-
-        return user
 
     
     @classmethod
@@ -78,7 +65,7 @@ class User(models.Model):
     @classmethod
     def update_password(cls, id, password):
         user = cls.objects.get(id=id)
-        user.password = password
+        user.password = make_password(password)
         user.save()
 
 
