@@ -203,3 +203,8 @@ def error(request) :
 def about(request) :
     if request.method == "GET" :
         return render(request, "about.html")
+
+
+def vision(request):
+    if request.method == "GET":
+        return render(request, "vision.html")
