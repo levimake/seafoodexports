@@ -46,7 +46,44 @@ background-image: url("{% static "commons/images/prod-paral3.jpg" %}");
 .vid:hover {
   opacity: 0.8;
   cursor: pointer;
+  font-size:37px;
+
 }
+
+.vid {
+  transition: all 0.1s ease-out;
+}
+
+.jumbotron h1 {
+  font-size:35px;
+}
+
+.slide-center-out
+{
+
+}
+/* add a empty string after the elment with class .slide-center-out  */
+.slide-center-out:after
+{
+content: '';
+display: block;
+height: 3px;
+width: 0;
+background: transparent;
+transition: width .5s ease, background-color .5s ease;
+-webkit-transition: width .5s ease, background-color .5s ease;
+-moz-transition: width .5s ease, background-color .5s ease;
+
+margin:auto; /* center the cotent so it will sliding from the midddle to the left and right */
+}
+
+/* Change the width and background on hover, aka sliding from the middle to the left and right */
+.slide-center-out:hover:after
+{
+width: 50%;
+background: #eee;
+}
+
 
 
 </style>
@@ -75,21 +112,21 @@ $(document).ready(function(){
 
   <div class="jumbotron paralmini paralsec2">
     <div class="row">
-  <div class="col">  <h1 data-toggle="modal" data-target="#01" class="display-3 vid" style="font-weight:bold;">Fish Collection</span></h1> </div>
-  <div class="col">  <h1 data-toggle="modal" data-target="#02" class="display-3 vid" style="font-weight:bold;">Processing</span></h1> </div>
+  <div class="col">  <h1 data-toggle="modal" data-target="#01" class="display-4 vid slide-center-out" style="font-weight:bold;">Fish Collection</h1> </div>
+  <div class="col">  <h1 data-toggle="modal" data-target="#02" class="display-4 vid slide-center-out" style="font-weight:bold;">Processing</h1> </div>
 </div>
 <div class="row">
-<div class="col">  <h1 data-toggle="modal" data-target="#03" class="display-3 vid" style="font-weight:bold;">Labelling</span></h1> </div>
-<div class="col">  <h1 data-toggle="modal" data-target="#04" class="display-3 vid" style="font-weight:bold;">Packaging</span></h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#03" class="display-4 vid slide-center-out" style="font-weight:bold;">Labelling</h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#04" class="display-4 vid slide-center-out" style="font-weight:bold;">Packaging</h1> </div>
 </div>
 <div class="row">
-<div class="col">  <h1 data-toggle="modal" data-target="#05" class="display-3 vid" style="font-weight:bold;">Quality Tests</span></h1> </div>
-<div class="col">  <h1 data-toggle="modal" data-target="#06" class="display-3 vid" style="font-weight:bold;">Research</span></h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#05" class="display-4 vid slide-center-out" style="font-weight:bold;">Quality Tests</h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#06" class="display-4 vid slide-center-out" style="font-weight:bold;">Research</h1> </div>
 </div>
   </div>
 
   <div class="jumbotron paralmini paralsec3">
-  <h1 class="display-3" style="font-weight:bold;">From Sea To Heart</span></h1>
+  <h1 class="display-3" style="font-weight:bold; font-size:60px;">From Sea To Heart</h1>
   <p class="lead">Quality is never an accident. It is always the result of an intelligent effort.</p>
 </div>
 
