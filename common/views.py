@@ -106,15 +106,15 @@ def profile(request):
 
     elif request.method == "GET":
         form = ProfileForm()
-        msg = ""
 
         if request.session['updated']:
             request.session['updated'] = False
+            request.session.save()
             msg = "Password updated successfully"
             return render(request, 'submit.html', {'form': form, 'msg': msg})
         
         else:
-            return render(request, 'submit.html', {'form': form, 'msg': msg})
+            return render(request, 'submit.html', {'form': form})
 
     else:
         return HttpResponse("Invalid request")
@@ -165,33 +165,28 @@ def update(request):
 
                 if check_password(old_password, user.password):
                     User.update_password(user.id, password)
-                    msg = "Password updated successfully"
-
-                    return redirect('/profile', {'msg': msg})
+                    request.session['updated'] = True
+                    request.session.save()
+                    return redirect('/profile')
 
                 else:
-                    msg = "Password verification failed"
-                    return redirect('/profile', {'msg1': msg1})
+                    return redirect('/profile')
 
             elif address:
                 try:
                     User.update_address(user.id, address)
-                    msg = "Address updated successfully"
-                    return redirect('/profile', {'msg': msg})
+                    return redirect('/profile')
 
                 except Exception as e:
-                    msg = "Address update failed"
-                    return redirect('/profile', {'msg1': msg1})
+                    return redirect('/profile')
 
             elif phone_number:
                 try:
                     User.update_phone(user.id, phone_number)
-                    msg = "Phone number updated successfully"
-                    return redirect('/profile', {'msg': msg})
+                    return redirect('/profile')
 
                 except Exception as e:
-                    msg = "Phone Number update failed"
-                    return redirect('/profile', {'msg1': msg1})
+                    return redirect('/profile')
 
             else:
                 return HttpResponseRedirect('/profile')
