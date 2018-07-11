@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+.paralmini h1 {
+  font-size: 30px;
+  padding-top: 0px;
+  line-height: 40px;
+}
+
+@media only screen and (min-width: 767.98px) {
+.container {
+  max-width: 60%;
+}
+
+.paralmini h1 {
+  font-size: 30px;
+  padding-top: 0px;
+  line-height: 00px;}
+}
+
+.paralsec1 {
+background-image: url("{% static "commons/images/visionfoot.jpg" %}");
+}
+
+.paralsec2 {
+background-image: url("{% static "commons/images/vision.jpg" %}");
+}
+
+.paralmini {
+  min-height: 80px;
+}
+
+.iconsBox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.iconsBox img {
+    max-height: 54px;
+    max-width: 54px;
+    }
+
+.icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.iconText {
+    margin-top: 1em;
+    font-size: 0.6em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    margin-bottom: 0;
+    }
+
+.iconText2 {
+    font-size: 0.6em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    }
+
+</style>
+
+
+<div class="container" style="font-size:18px;">
+  <h3 class='display-4 page-title'>Vision</h3>
+    <hr style="height:2px; width:10%;"/>
+
+<img src="{% static "commons/images/logowithBG.jpg" %}" class="rounded-circle mx-auto d-block" style="height:100px; padding:10px;">
+
+<div class="jumbotron paralmini paralsec1" style="margin-top: 40px;">
+<h1 class="display-3" style="font-weight:bold; color: #f9a072">On a journey to transform seafood business.</span></h1>
+</div>
+
+<h3 class='display-5 page-title' style="text-transform:none; font-weight:bold;"></h3>
+<p style="padding:10px; font-family: 'Open Sans', sans-serif; font-size: 1em; font-weight: 600;">
+  Combining inland, marine catches and aquaculture production, Delmar seeks to bring 
+  the world to your plate as India's appetite for processed seafood is on the rise. 
+  Fish and fish products have been vital to the regional cuisine and serves as an
+  important addition to the staple diet consumed by millions on a daily basis.
+  <br />
+  <br />
+</p>
+
+
+<div class="jumbotron paralmini paralsec2">
+<h1 class="display-3" style="font-weight:bold; color: #f9a072;">Incorporating quality into variety</span></h1>
+</div>
+<h3 class='display-5 page-title' style="text-transform:none; font-weight:bold;"></h3>
+<p style="padding:10px; font-family: 'Open Sans', sans-serif; font-size: 1em; font-weight: 600;">
+ 
+  Delmar exports the most sought after fish
+  categories including Tuna, Pomfrets, Mackerels, Seer fish, Sea bass and other
+  exotic fish types such as Shrimps, Crabs, Octopus and Lobsters.
+
+</p>
+
+<hr style="height:1px; width:30%;"/>
+
+<div class ="iconsBox">
+    <div class = "icon">
+        <img src = "{% static "commons/images/indiaicon.png" %}">
+        <p class="iconText"> PAN-INDIA </p>
+        <p class="iconText2"> AVAILABILITY </p>
+    </div>
+    <div class="icon">
+        <img src = "{% static "commons/images/cookicon.png" %}">
+        <p class="iconText"> READY TO COOK </p>
+        <p class="iconText2"> PACKAGING</p>
+    </div>
+    <div class="icon">
+        <img src = "{% static "commons/images/rupeeicon.jpg" %}">
+        <p class="iconText"> AFFORDABLE</p>
+        <p class="iconText2"> PRICING </p>
+    </div>
+</div>
+
+<div class ="iconsBox">
+    <div class="icon">
+        <i class="fa fa-shopping-bag fa-3x" aria-hidden="true"></i>
+        <p class="iconText"> FOOD FRIENDLY </p>
+        <p class="iconText2"> PACKAGING </p>
+    </div>
+    <div class="icon">
+        <i class="fa fa-snowflake-o fa-3x" aria-hidden="true"></i>
+        <p class="iconText"> COLD STORAGE </p>
+        <p class="iconText2"> FOR FRESHNESS </p>
+    </div>
+    <div class="icon">
+        <img src = "{% static "commons/images/fishicon.png" %}">
+        <p class="iconText"> WIDE VARIETY</p>
+        <p class="iconText2"> AVAILABLE  </p>
+    </div>
+</div>
+
+
+</div>
+
+<div style="margin-bottom:35px;" />
+
+
+{% endblock content %}

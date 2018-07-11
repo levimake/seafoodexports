@@ -204,6 +204,11 @@ def about(request) :
     if request.method == "GET" :
         return render(request, "about.html")
 
+
 def production(request) :
     if request.method =="GET" :
         return render(request, "production.html")
+
+def vision(request):
+    if request.method == "GET":
+        return render(request, "vision.html")
