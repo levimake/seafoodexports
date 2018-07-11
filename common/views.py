@@ -11,7 +11,7 @@ from .decorators import IsLoggedIn
 def home(request):
     if request.method=="GET":
         request.session['logged_in'] = request.session.get('logged_in', False)
-        request.session['updated'] = request.session.get('updated', False)
+        request.session['updated'] = request.session.get('updated', 0)
         return render(request, 'index.html', {'request':request})
 
 
@@ -126,10 +126,16 @@ def profile_view(request):
             form1 = AddressForm()
             form2 = PasswordForm()
             form3 = PhoneForm()
+
+            msg = "Password updated successfully
             
-            if request.session['updated']:
+            if request.session['updated'] >= 1:
+
+                if request.session['updated'] == 2:
+                    msg = "Failed to update password"
+                
                 updated = True
-                request.session['updated'] = False
+                request.session['updated'] = 0
                 request.session.save()
 
             else:
@@ -141,7 +147,7 @@ def profile_view(request):
                        'form2': form2,
                        'form3': form3,
                        'updated': updated,
-                       'msg': 'Password Updated successfully'
+                       'msg': msg
                       }
 
             return render(request, 'update.html', payload)
@@ -167,11 +173,13 @@ def update(request):
 
                 if check_password(old_password, user.password):
                     User.update_password(user.id, password)
-                    request.session['updated'] = True
+                    request.session['updated'] = 1
                     request.session.save()
                     return redirect('/profile')
 
                 else:
+                    request.session['updated'] = 2
+                    request.session.save()
                     return redirect('/profile')
 
             elif address:
