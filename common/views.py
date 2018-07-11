@@ -119,7 +119,7 @@ def profile_view(request):
         user = User.objects.get(id=id)
 
         if user.completed:
-            
+
             id = request.session['user_id']
             user = User.objects.get(id = id)
             form1 = AddressForm()
@@ -157,12 +157,12 @@ def update(request):
                 if check_password(old_password, user.password):
                     User.update_password(user.id, password)
                     msg = "Password updated successfully"
-                
+
                     return redirect('/profile', {'msg': msg})
-                
+
                 else:
                     msg = "Password verification failed"
-                    return redirect('/profile', {'msg': msg})
+                    return redirect('/profile', {'msg1': msg1})
 
             elif address:
                 try:
@@ -172,17 +172,17 @@ def update(request):
 
                 except Exception as e:
                     msg = "Address update failed"
-                    return redirect('/profile', {'msg': msg})
+                    return redirect('/profile', {'msg1': msg1})
 
             elif phone_number:
                 try:
                     User.update_phone(user.id, phone_number)
                     msg = "Phone number updated successfully"
                     return redirect('/profile', {'msg': msg})
-                    
+
                 except Exception as e:
                     msg = "Phone Number update failed"
-                    return redirect('/profile', {'msg': msg})
+                    return redirect('/profile', {'msg1': msg1})
 
             else:
                 return HttpResponseRedirect('/profile')
@@ -203,3 +203,7 @@ def error(request) :
 def about(request) :
     if request.method == "GET" :
         return render(request, "about.html")
+
+def production(request) :
+    if request.method =="GET" :
+        return render(request, "production.html")

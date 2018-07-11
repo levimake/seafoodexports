@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+@media only screen and (min-width: 767.98px) {
+.container {
+  max-width: 60%;
+}
+}
+
+.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+
+
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+.close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:999;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
+
+.paralsec1 {
+background-image: url("{% static "commons/images/prod-paral1.jpg" %}");
+}
+.paralsec2 {
+background-image: url("{% static "commons/images/prod-paral2.jpg" %}");
+}
+.paralsec3 {
+background-image: url("{% static "commons/images/prod-paral3.jpg" %}");
+}
+
+.vid:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+</style>
+
+
+  <div class="jumbotron paralmini paralsec1">
+  <h1 class="display-3" style="font-weight:bold;">How Do We Work ?</span></h1>
+  <p class="lead">Watch our videos to take a glance at our production.</p>
+  <p class="lead" style="font-weight:bold;"><i class="fa fa-play" aria-hidden="true" style="font-size:150px;"></i></span></hp>
+  </div>
+
+  <div class="jumbotron paralmini paralsec2">
+    <div class="row">
+  <div class="col">  <h1 data-toggle="modal" data-target="#01" class="display-3 vid" style="font-weight:bold;">Fish Collection</span></h1> </div>
+  <div class="col">  <h1 data-toggle="modal" data-target="#02" class="display-3 vid" style="font-weight:bold;">Processing</span></h1> </div>
+</div>
+<div class="row">
+<div class="col">  <h1 data-toggle="modal" data-target="#03" class="display-3 vid" style="font-weight:bold;">Labelling</span></h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#04" class="display-3 vid" style="font-weight:bold;">Packaging</span></h1> </div>
+</div>
+<div class="row">
+<div class="col">  <h1 data-toggle="modal" data-target="#05" class="display-3 vid" style="font-weight:bold;">Quality Tests</span></h1> </div>
+<div class="col">  <h1 data-toggle="modal" data-target="#06" class="display-3 vid" style="font-weight:bold;">Research</span></h1> </div>
+</div>
+  </div>
+
+  <div class="jumbotron paralmini paralsec3">
+  <h1 class="display-3" style="font-weight:bold;">From Sea To Heart</span></h1>
+  <p class="lead">Quality is never an accident. It is always the result of an intelligent effort.</p>
+</div>
+
+
+
+<div class="modal fade" id="01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How We Collect Our Fish ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/01.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="02" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Processing of Fish</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/02.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Labelling The Packages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/03.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Labelling The Packages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/03.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="04" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Packaging Division</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/04.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="05" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Quality Checks For The Products</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/005.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="06" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Our Research And Customer Services</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-21by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/06.mp4" %}" controls></video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}
