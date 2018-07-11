@@ -51,6 +51,21 @@ background-image: url("{% static "commons/images/prod-paral3.jpg" %}");
 
 </style>
 
+<script>
+$(document).ready(function(){
+    $('.modal').each(function(){
+            var src = $(this).find('video').attr('src');
+
+        $(this).on('click', function(){
+
+            $(this).find('video').attr('src', '');
+            $(this).find('video').attr('src', src);
+
+        });
+    });
+});
+</script>
+
 
   <div class="jumbotron paralmini paralsec1">
   <h1 class="display-3" style="font-weight:bold;">How Do We Work ?</span></h1>
