@@ -12,9 +12,15 @@ from common.models import User
 @IsLoggedIn
 def home(request):
     if request.method == "GET":
-        my_orders = Order.objects.filter(user = request.session['user_id'])
-        return render(request, 'myOrders.html', {'orders': my_orders})
-
+        id = request.session['user_id']
+        user = User.objects.get(id=id)
+        
+        if user.completed:
+            my_orders = Order.objects.filter(user=user)
+            return render(request, 'myOrders.html', {'orders': my_orders})
+        
+        else:
+            return HttpResponseRedirect('/submit')
 
 @IsLoggedIn
 def place_order(request):
@@ -31,5 +37,12 @@ def place_order(request):
             return render(request, 'error.html', {'error':error})
 
     elif request.method == "GET":
-        form = OrderForm()
-        return render(request, 'addOrder.html', {'form': form})
+        id = request.session['user_id']
+        user = User.objects.get(id=id)
+        
+        if user.completed:
+            form = OrderForm()
+            return render(request, 'addOrder.html', {'form': form})
+
+        else:
+            return HttpResponseRedirect('/submit')
