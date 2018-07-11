@@ -11,6 +11,7 @@ from .decorators import IsLoggedIn
 def home(request):
     if request.method=="GET":
         request.session['logged_in'] = request.session.get('logged_in', False)
+        request.session['updated'] = request.session.get('updated', False)
         return render(request, 'index.html', {'request':request})
 
 
@@ -105,7 +106,15 @@ def profile(request):
 
     elif request.method == "GET":
         form = ProfileForm()
-        return render(request, 'submit.html', {'form': form})
+        msg = ""
+
+        if request.session['updated']:
+            request.session['updated'] = False
+            msg = "Password updated successfully"
+            return render(request, 'submit.html', {'form': form, 'msg': msg})
+        
+        else:
+            return render(request, 'submit.html', {'form': form, 'msg': msg})
 
     else:
         return HttpResponse("Invalid request")
