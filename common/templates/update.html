@@ -8,6 +8,9 @@
     <hr/>
     <div class="container">
 
+      {% if updated %}<div class="alert alert-primary">{{ msg }}</div>{% else %}
+      {% endif %}
+
     <div class="row">
       <div class="col-sm">
     <p style="font-size:20px;"><span class='display-5 page-title' style="color:black;">Name : </span>
@@ -27,8 +30,6 @@
   </div>
 
 </div>
-<p> Message </p>
-<p> {{ msg }} </p>
 </div>
 
 

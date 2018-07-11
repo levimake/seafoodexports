@@ -16,7 +16,9 @@
       margin: 30px auto;
   }
 
-
+  .paralmini {
+    min-height: 600px;
+  }
 
 .modal-body {
   position:relative;
@@ -107,10 +109,10 @@ $(document).ready(function(){
   <div class="jumbotron paralmini paralsec1">
   <h1 class="display-3" style="font-weight:bold;">How Do We Work ?</span></h1>
   <p class="lead">Watch our videos to take a glance at our production.</p>
-  <p class="lead" style="font-weight:bold;"><i class="fa fa-play" aria-hidden="true" style="font-size:150px;"></i></span></hp>
+  <a href="#production"><p class="lead" style="font-weight:bold;"><i class="fa fa-play" aria-hidden="true" style="font-size:150px;"></i></span></p></a>
   </div>
 
-  <div class="jumbotron paralmini paralsec2">
+  <div class="jumbotron paralmini paralsec2" id="production">
     <div class="row">
   <div class="col">  <h1 data-toggle="modal" data-target="#01" class="display-4 vid slide-center-out" style="font-weight:bold;">Fish Collection</h1> </div>
   <div class="col">  <h1 data-toggle="modal" data-target="#02" class="display-4 vid slide-center-out" style="font-weight:bold;">Processing</h1> </div>
@@ -142,12 +144,9 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/01.mp4" %}" controls></video>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -163,12 +162,27 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/02.mp4" %}" controls></video>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Labelling The Packages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+          <video class="embed-responsive-item" src="{% static "commons/videos/03.mp4" %}" controls></video>
+        </div>
       </div>
     </div>
   </div>
@@ -184,33 +198,9 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/03.mp4" %}" controls></video>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Labelling The Packages</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
-          <video class="embed-responsive-item" src="{% static "commons/videos/03.mp4" %}" controls></video>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -226,12 +216,9 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/04.mp4" %}" controls></video>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -247,12 +234,9 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/005.mp4" %}" controls></video>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -268,12 +252,9 @@ $(document).ready(function(){
         </button>
       </div>
       <div class="modal-body">
-        <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive embed-responsive-16by9">
           <video class="embed-responsive-item" src="{% static "commons/videos/06.mp4" %}" controls></video>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

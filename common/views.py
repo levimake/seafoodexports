@@ -107,7 +107,7 @@ def profile(request):
     elif request.method == "GET":
         form = ProfileForm()
         return render(request, 'submit.html', {'form': form})
-        
+
     else:
         return HttpResponse("Invalid request")
 
@@ -127,13 +127,13 @@ def profile_view(request):
             form2 = PasswordForm()
             form3 = PhoneForm()
 
-            msg = "Password updated successfully
-            
+            msg = "Password updated successfully"
+
             if request.session['updated'] >= 1:
 
                 if request.session['updated'] == 2:
                     msg = "Failed to update password"
-                
+
                 updated = True
                 request.session['updated'] = 0
                 request.session.save()
