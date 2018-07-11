@@ -106,16 +106,8 @@ def profile(request):
 
     elif request.method == "GET":
         form = ProfileForm()
-
-        if request.session['updated']:
-            request.session['updated'] = False
-            request.session.save()
-            msg = "Password updated successfully"
-            return render(request, 'submit.html', {'form': form, 'msg': msg})
+        return render(request, 'submit.html', {'form': form})
         
-        else:
-            return render(request, 'submit.html', {'form': form})
-
     else:
         return HttpResponse("Invalid request")
 
@@ -134,12 +126,22 @@ def profile_view(request):
             form1 = AddressForm()
             form2 = PasswordForm()
             form3 = PhoneForm()
+            
+            if request.session['updated']:
+                updated = True
+                request.session['updated'] = False
+                request.session.save()
+
+            else:
+                updated = False
 
             payload = {
                        'cur_user': user,
                        'form1': form1,
                        'form2': form2,
-                       'form3': form3
+                       'form3': form3,
+                       'updated': updated,
+                       'msg': 'Password Updated successfully'
                       }
 
             return render(request, 'update.html', payload)
